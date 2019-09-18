@@ -1,11 +1,31 @@
 #include <stdio.h>
 
+void getTotal (double total){
+	double tip = 0;
+	double tax = 0;
+
+	printf("Total before tip and tax: %.2f\n", total);
+	tip = total * .2;
+	printf("Tip: %.2f\n", tip);
+	tax = total * .0825;
+	printf("Tax: %.2f\n", tax);
+	total += (tax + tip);
+	printf("Total including tax and tip: %.2f\n", total);
+}
+
+void printMenu(){
+	printf("	   MENU\n");
+	printf("============================\n");
+	printf("1. Cheese Platter: $23\n");
+	printf("2. French Onion Soup $16\n");
+	printf("3. Ribeye $70\n");
+	printf("4. Fleur Burger 5000 $5000\n");
+}
+
 int main(){
 	int stop = 1;
 	int answer = 0;
 	double total = 0;
-	double tip = 0;
-	double tax = 0;
 
 	while(stop){
 
@@ -47,21 +67,3 @@ int main(){
 	}
 }
 
-void getTotal (double total){
-	printf("Total before tip and tax: %.2f\n", total);
-	tip = total * .2;
-	printf("Tip: %.2f\n", tip);
-	tax = total * .0825;
-	printf("Tax: %.2f\n", tax);
-	total += (tax + tip);
-	printf("Total including tax and tip: %.2f\n", total);
-}
-
-void printMenu(){
-	printf("	   MENU\n");
-	printf("============================\n");
-	printf("1. Cheese Platter: $23\n");
-	printf("2. French Onion Soup $16\n");
-	printf("3. Ribeye $70\n");
-	printf("4. Fleur Burger 5000 $5000\n");
-}
